@@ -12,6 +12,9 @@ gem 'sqlite3', '~> 1.4'
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
+# create environment variable [https://github.com/bkeepers/dotenv]
+gem 'dotenv-rails', groups: %i[development test]
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
@@ -39,6 +42,7 @@ gem 'rack-cors'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry', '~> 0.13.1'
 end
 
 group :development do
@@ -52,4 +56,4 @@ gem 'active_model_serializers', '~> 0.10.13'
 
 gem 'faker', '~> 2.20'
 
-gem "rspec", "~> 3.11"
+gem 'rspec', '~> 3.11'
