@@ -1,13 +1,18 @@
+import { connect } from 'react-redux'
+import './App.css'
+import { Component } from 'react'
+import Home from './components/Home'
+import { Routes, Route } from 'react-router-dom'
 
-import './App.css';
-import LoginContainer from './containers/login';
 
-function App() {
-  return (
-    <div className="App">
-      <LoginContainer />
-    </div>
-  );
+class App extends Component {
+  render () {
+    return (
+      <Routes>
+        <Route exact path='/' element={<Home/>}/>
+      </Routes>
+    )
+  }
 }
 
-export default App;
+export default connect()(App)
