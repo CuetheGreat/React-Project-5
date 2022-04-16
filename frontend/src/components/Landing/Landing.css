@@ -1,0 +1,19 @@
+.Landing-Page {
+  margin: 0;
+  padding: 0;
+  background-image: url('https://www.svgheart.com/wp-content/uploads/2020/07/drink-and-fruit-free-svg-file.png');
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  background-color: palegoldenrod;
+  text-align: center;
+  justify-items: center;
+}
+
+.sub-title{
+  padding: 0;
+  margin: 0;
+  color: palevioletred;
+}

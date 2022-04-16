@@ -1,16 +1,19 @@
 import { connect } from 'react-redux'
 import './App.css'
-import { Component } from 'react'
-import Home from './components/Home'
+import { Component, Fragment } from 'react'
+import Landing from './components/Landing/Landing'
 import { Routes, Route } from 'react-router-dom'
-
+import Navbar from './components/Navbar/Navbar'
 
 class App extends Component {
   render () {
     return (
-      <Routes>
-        <Route exact path='/' element={<Home/>}/>
-      </Routes>
+      <Fragment>
+        <Navbar />
+        <Routes>
+          <Route exact path='/' element={<Landing />} />
+        </Routes>
+      </Fragment>
     )
   }
 }
