@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  ingredient_count: 1
+  ingredients: one
+  instruction_count: 1
+  instructions: one
+  glass: MyString
+  garnish: MyString
+  image: MyString
+
+two:
+  name: MyString
+  description: MyString
+  ingredient_count: 1
+  ingredients: two
+  instruction_count: 1
+  instructions: two
+  glass: MyString
+  garnish: MyString
+  image: MyString
