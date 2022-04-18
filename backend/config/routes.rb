@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:create]
-      resources :drinks
+      resources :drinks, only: %i[index create delete]
+      get '/drinks/:slug', to: 'drinks#show'
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
     end

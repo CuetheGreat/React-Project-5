@@ -1,28 +1,15 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { fetchDrinks } from '../actions/Drink/drinkActions'
-import {DrinkCard} from '../components/Card/DrinkCard'
+import React from 'react'
 
-class DrinkContainer extends Component {
-  componentDidMount () {
-    this.props.fetchDrinks()
-  }
+import { DrinkCard } from '../components/Card/DrinkCard'
 
-  render () {
-    return <div style={{display: 'flex'}}>{this.props.drinks.map( drink => <DrinkCard key={drink.id} drink={drink}/>)}</div>
-  }
+const DrinkContainer = props => {
+  return (
+    <div style={{ display: 'flex' }}>
+      {props.drinks.map(drink => (
+        <DrinkCard key={drink.id} drink={drink} />
+      ))}
+    </div>
+  )
 }
 
-const mapStateToProps = state => {
-  return {
-    drinks: state.drinks
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchDrinks: () => dispatch(fetchDrinks())
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DrinkContainer)
+export default DrinkContainer

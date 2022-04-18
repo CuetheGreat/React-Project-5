@@ -1,3 +1,3 @@
 class InstructionsSerializer < ActiveModel::Serializer
-  attributes :id, :order, :step
+  attributes :order, :step
 end

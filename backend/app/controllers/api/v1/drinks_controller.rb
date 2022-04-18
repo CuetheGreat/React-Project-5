@@ -16,12 +16,12 @@ class Api::V1::DrinksController < ApplicationController
   end
 
   def show
-    drink = Drink.find_by(params[:id])
+    drink = Drink.find_by(params[:slug])
     render json: { drinks: DrinkSerializer.new(drink) }, status: :ok
   end
 
   def delete
-    drink = Drink.find_by(params[:id])
+    drink = Drink.find_by(slug: params[:slug])
     drink.destroy
     render json: { message: 'Drink has been destroyed' }, status: :accepted
   end

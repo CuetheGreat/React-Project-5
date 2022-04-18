@@ -1,5 +1,5 @@
 class DrinkSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :ingredient_count, :instruction_count, :ingredients, :instructions, :glass,
+  attributes :id, :name, :slug, :description, :ingredient_count, :instruction_count, :ingredients, :instructions, :glass,
              :garnish, :image
 
   def ingredients

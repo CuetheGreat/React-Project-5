@@ -7,7 +7,7 @@ class Drink < ApplicationRecord
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :description, :glass, :garnish, :image, presence: true
 
-  before_create :set_instruction_count, :set_ingredient_count
+  before_create :set_instruction_count, :set_ingredient_count, :generate_slug
 
   private
 
@@ -17,5 +17,9 @@ class Drink < ApplicationRecord
 
   def set_ingredient_count
     self.ingredient_count = ingredients.length
+  end
+
+  def generate_slug
+    self.slug = name.gsub(/['`]/, '').parameterize
   end
 end
