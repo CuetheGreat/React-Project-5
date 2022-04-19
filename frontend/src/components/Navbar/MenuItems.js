@@ -6,12 +6,17 @@ export const MenuItems = [
   },
   {
     title: 'Add Drinks',
-    url: '#',
+    url: '/new/drink',
     clName: 'nav-links'
   },
   {
-    title: 'Home',
-    url: '#',
+    title: 'Log In',
+    url: '/login',
     clName: 'nav-links'
+  },
+  {
+  title: 'Sign Up',
+  url: '/signup',
+  clName:'nav-links'
   }
 ]

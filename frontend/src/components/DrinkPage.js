@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 
 const DrinkPage = props => {
   let { slug } = useParams()
-  const drink = props.drinks.filter(d => d.slug == slug)[0]
+  const drink = props.drinks.filter(d => d.slug === slug)[0]
 
   console.log(drink)
   return (
@@ -12,23 +12,23 @@ const DrinkPage = props => {
         <h1>{drink.name}</h1>
       </div>
       <div style={{ display: 'flex' }}>
-        <img src={drink.image} />
+        <img src={drink.image} alt={drink.slug}/>
         <div className='drink-info'>
           <p className='drink-description'>{drink.description}</p>
-          <ul>
+          <ul className='drink-ingredients'>
             {drink.ingredients.map((i, index) => (
-              <li key={index}>{`${i.measure} ${i.kind}`}</li>
+              <li className='bullet-point' key={index}>{`${i.measure} ${i.kind}`}</li>
             ))}
           </ul>
-          <div>
+          <div className='drink-extras'>
             <p>{drink.glass}</p>
             <p>{drink.garnish}</p>
           </div>
-          <div>
+          <ul className='drink-instructions'>
             {drink.instructions.map((i, index) => (
-              <li key={index}>{`${i.step}`}</li>
+              <li className='bullet-point' key={index}>{`${i.step}`}</li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </div>
