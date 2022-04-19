@@ -20,28 +20,22 @@ const post = data => {
   }
 }
 
-export const fetchAllDrinks = () => {
+export const getDrinks = () => {
   return dispatch => {
-    dispatch({ type: 'LOAD_DRINKS' })
+    dispatch({ type: 'DRINKS_LOADING' })
     fetch('http://localhost:3000/api/v1/drinks')
       .then(res => res.json())
-      .then(drinks => dispatch({ type: 'GET_ALL_DRINKS', drinks: drinks }))
-  }
-}
-export const fetchSingleDrink = slug => {
-  return dispatch => {
-    dispatch({ type: 'LOAD_DRINKS' })
-    fetch(`http://localhost:3000/api/v1/drinks/${slug}`, get)
-      .then(res => res.json())
-      .then(drink => dispatch({ type: 'GET_SINGLE_DRINK', drink: drink }))
+      .then(obj =>{
+      console.log('Object:',obj)
+      dispatch({ type: 'GET_DRINKS', payload: obj })})
   }
 }
 
-export const fetchAddDrink = data => {
+export const addDrink = data => {
   return dispatch => {
-    dispatch({ type: 'LOAD_DRINKS' })
+    dispatch({ type: 'DRINKS_LOADING' })
     fetch('http://localhost:3000/api/v1/drinks', post(data))
       .then(res => res.json())
-      .then(drink => dispatch({ type: 'ADD_DRINK', drink: drink }))
+      .then(drink => dispatch({ type: 'ADD_DRINKS', drink: drink }))
   }
 }

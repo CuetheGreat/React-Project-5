@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchAddDrink } from '../../actions/Drinks/drinkActions'
+import { addDrink } from '../../actions/Drinks/drinkActions'
 
 
 class DrinkForm extends Component {
@@ -218,7 +218,7 @@ class DrinkForm extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addDrink: (obj) => dispatch(fetchAddDrink(obj))
+    addDrink: (obj) => dispatch(addDrink(obj))
   }
 }
 

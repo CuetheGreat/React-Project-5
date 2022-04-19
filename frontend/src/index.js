@@ -7,9 +7,9 @@ import { Provider } from 'react-redux'
 import { applyMiddleware, createStore } from 'redux'
 import thunk from 'redux-thunk'
 import { BrowserRouter } from 'react-router-dom'
-import { drinkReducer } from './reducers/drinkReducers'
+import rootReducer  from './reducers/combinedReducers'
 
-const store = createStore(drinkReducer, applyMiddleware(thunk))
+const store = createStore(rootReducer, applyMiddleware(thunk))
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <Provider store={store}>

@@ -6,8 +6,11 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import DrinkContainer from './containers/DrinkContainer'
 import DrinkPage from './components/DrinkPage'
-import { fetchAllDrinks } from './actions/Drinks/drinkActions'
+import { getDrinks } from './actions/Drinks/drinkActions'
 import DrinkForm from './components/DrinkForm/DrinkForm'
+import LoginContainer from './containers/LoginContainer'
+import { getCurrentUser } from './actions/Users/userActions'
+import UserProfile from './components/UserProfile/UserProfile'
 
 class App extends Component {
   componentDidMount () {
@@ -15,36 +18,47 @@ class App extends Component {
   }
 
   render () {
+  console.log(this.props.drinks)
+
     return (
+      this.props.loading ?  (<div></div>): (
       <Fragment>
         <Navbar />
         <Routes>
           <Route exact path='/' element={<Landing />} />
           <Route
-            exact
-            path='/drinks'
+            exact path='/drinks'
             element={<DrinkContainer drinks={this.props.drinks} />}
           />
-          <Route exact path='/new/drink' element={<DrinkForm />} />
+          <Route exact path='/drinks/new' element={<DrinkForm />} />
           <Route
             path='/drinks/:slug'
             element={<DrinkPage drinks={this.props.drinks} />}
           />
+          <Route path='/login' element={<LoginContainer />} />
+          <Route
+            path='/profile'
+            element={<UserProfile user={this.props.currentUser} />}
+          />
         </Routes>
       </Fragment>
+      )
     )
   }
 }
 
 const mapStateToProps = state => {
   return {
-    drinks: state.drinks
+    loading: state.loading,
+    drinks: state.drinks,
+    currentUser: state.currentUser
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchDrinks: () => dispatch(fetchAllDrinks())
+    fetchDrinks: () => dispatch(getDrinks()),
+    fetchCurrentUser: () => dispatch(getCurrentUser())
   }
 }
 
