@@ -29,7 +29,7 @@ export const loginUser = data => {
         sessionStorage.setItem('jwt', obj.jwt)
         dispatch({ type: 'USER_LOGGED_IN', user: obj.user })
       })
-      .catch( error =>  console.log(error))
+      .catch(error => console.log(error))
   }
 }
 
@@ -37,10 +37,10 @@ export const getCurrentUser = () => {
   return dispatch => {
     dispatch({ type: 'LOADING_USER' })
     fetch('http://127.0.0.1:3000/api/v1/profile', get)
-    .then(res => res.json())
-    .then(obj =>
-      dispatch({type:'USER_LOGGED_IN',user:obj.user})
-    )
-
+      .then(res => res.json())
+      .then(obj => {
+        console.log('User Request:',obj)
+        dispatch({ type: 'GET_USER', payload: obj })
+      })
   }
 }

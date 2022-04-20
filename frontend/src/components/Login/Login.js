@@ -11,7 +11,7 @@ const LoginForm = props => {
       password: props.password
     }}
     props.handleSubmit(user)
-    navigate(`/profile/${props.username}`)
+    navigate(`/profile`)
   }
 
   console.log(props)

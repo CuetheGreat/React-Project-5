@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { MenuItems } from './MenuItems'
 import './Navbar.css'
 
@@ -13,7 +14,12 @@ class Navbar extends Component {
     })
   }
 
+  handleLogin = () => {
+    console.log(localStorage.getItem('jwt'))
+  }
+
   render () {
+  console.log(this.props.s)
     return (
       <nav className='Navbar-Items'>
         <h1 className='navbar-logo'>
@@ -37,4 +43,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar
+export default connect()(Navbar)

@@ -5,7 +5,8 @@ const DrinkPage = props => {
   let { slug } = useParams()
   const drink = props.drinks.filter(d => d.slug == slug)[0]
 
-  console.log(drink)
+  console.log('Drink Page:',props)
+
   return (
     <div>
       <div className='drink-name'>

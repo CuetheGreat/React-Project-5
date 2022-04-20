@@ -3,7 +3,7 @@ import React from 'react'
 import { DrinkCard } from '../components/Card/DrinkCard'
 
 const DrinkContainer = props => {
-  console.log(props)
+  console.log('Drink Container:', props)
   return (
     <div style={{ display: 'flex' }}>
       {props.drinks.map(drink => (

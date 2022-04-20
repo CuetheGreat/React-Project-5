@@ -23,17 +23,19 @@ export const drinks = (
   }
 }
 
-export const userReducer = (
-  state = { user: {}, loading: false },
+export const user = (
+  state = {
+  user: {},
+  loading: false },
   action
 ) => {
   switch (action.type) {
     case 'USER_LOADING':
       return { ...state, user: {},loading: true }
-    case 'ADD_USER':
+    case 'CREATE_USER':
       return { ...state, user: action.payload, loading: false }
     case 'GET_USER':
-      return { ...state, user: action.paylod, loading: false }
+      return { ...state, user: action.payload.user, loading: false }
     default:
       return { ...state }
   }

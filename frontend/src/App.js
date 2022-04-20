@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   render () {
-  console.log(this.props.drinks)
+  console.log( 'App:',this.props.drinks_state.drinks)
 
     return (
       this.props.loading ?  (<div></div>): (
@@ -28,12 +28,12 @@ class App extends Component {
           <Route exact path='/' element={<Landing />} />
           <Route
             exact path='/drinks'
-            element={<DrinkContainer drinks={this.props.drinks} />}
+            element={<DrinkContainer drinks={this.props.drinks_state.drinks} />}
           />
           <Route exact path='/drinks/new' element={<DrinkForm />} />
           <Route
             path='/drinks/:slug'
-            element={<DrinkPage drinks={this.props.drinks} />}
+            element={<DrinkPage drinks={this.props.drinks_state.drinks} />}
           />
           <Route path='/login' element={<LoginContainer />} />
           <Route
@@ -49,9 +49,9 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    loading: state.loading,
-    drinks: state.drinks,
-    currentUser: state.currentUser
+    loading_state: state.loading,
+    drinks_state: state.drinks,
+    user_state: state.currentUser
   }
 }
 
