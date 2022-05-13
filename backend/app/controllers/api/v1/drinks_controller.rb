@@ -9,15 +9,15 @@ class Api::V1::DrinksController < ApplicationController
   def create
     drink = Drink.create(drink_params)
     if drink.valid?
-      render json: { result: DrinkSerializer.new(drink) }, status: :created
+      render json: { drinks: [DrinkSerializer.new(drink)] }, status: :created
     else
       render json: { message: drink.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
   def show
-    drink = Drink.find_by(params[:slug])
-    render json: { drinks: DrinkSerializer.new(drink) }, status: :ok
+    drink = Drink.find_by(slug: params[:slug])
+    render json: { drinks: [DrinkSerializer.new(drink)] }, status: :ok
   end
 
   def delete

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import { drinks, user } from './reducers'
+import drinkReducer from '../feature/Drinks/drinkSlice'
 
 const rootReducer = combineReducers({
-  drinks,user
+  drinks: drinkReducer
 })
 
 export default rootReducer

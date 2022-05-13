@@ -1,26 +1,27 @@
 import React from 'react'
+import { Button, Card, Col, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './Card.css'
 
-export const DrinkCard = ({drink}) => {
+export const DrinkCard = ({ drink }) => {
   return (
-    <div className='drink-card'>
-      <img
-        src={drink.image}
-        alt={drink.name}
-        className={'card-image'}
-      />
-      <div className='card-content'>
-        <div className='card-title'>
-          <h3>{drink.name}</h3>
-        </div>
-        <div className='card-description'>
-          <p>{drink.description}</p>
-        </div>
-        <div className='btn'>
-          <button><Link params={{slug: drink.slug}} to={`/drinks/${drink.slug}`  }>Make This</Link></button>
-        </div>
-      </div>
-    </div>
+    <Card className='m-1 rounded shadow '>
+      <Row >
+        <Col style={{paddingRight: 0, width: '50%' }}>
+          <Card.Img
+            src={drink.image}
+            style={{verticalAlign: 'top', height: '100%', width: '100%' }}
+          />
+        </Col>
+        <Col style={{paddingRight: 0}}>
+          <Card.Body>
+            <Card.Title>{drink.name}</Card.Title>
+            <Link params={{ slug: drink.slug }} to={`/drinks/${drink.slug}`}>
+              <Button variant='primary'>Make This</Button>{' '}
+            </Link>
+          </Card.Body>
+        </Col>
+      </Row>
+    </Card>
   )
 }

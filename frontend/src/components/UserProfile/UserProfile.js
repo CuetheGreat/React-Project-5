@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getCurrentUser } from '../../actions/Users/userActions'
+import { getCurrentUser } from '../../feature/Users/userActions'
 import './UserProfile.css'
 
 class UserProfile extends Component {

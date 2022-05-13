@@ -1,46 +1,33 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
+import { Container, Navbar } from 'react-bootstrap'
+import { Outlet } from 'react-router'
+import { Link } from 'react-router-dom'
 import { MenuItems } from './MenuItems'
 import './Navbar.css'
 
-class Navbar extends Component {
-  state = {
-    active: false
-  }
-
-  handleClick = () => {
-    this.setState({
-      active: !this.state.active
-    })
-  }
-
-  handleLogin = () => {
-    console.log(localStorage.getItem('jwt'))
-  }
-
-  render () {
-  console.log(this.props.s)
-    return (
-      <nav className='Navbar-Items'>
-        <h1 className='navbar-logo'>
-          Drinks On Me
-          <i className='fa fa-glass' />
-        </h1>
-        <div className='menu-icon' onClick={this.handleClick}>
-          <i className={this.state.active ? 'fas fa-times' : 'fas fa-bars'} />
+const NavigationBar = () => {
+  return (
+    <Container>
+      <Navbar className='Navbar-Items'>
+        <div className='navbar-logo' style={{ display: 'flex' }}>
+          <Navbar.Brand style={{fontSize: '2em', color: 'white'}}>
+            <i className='fa fa-glass' />
+            Drinks On Me
+          </Navbar.Brand>
         </div>
-        <ul className={this.state.active ? 'nav-menu active' : 'nav-menu'}>
+        <ul className='nav-menu active'>
           {MenuItems.map((item, index) => (
             <li key={index}>
-              <a className={item.clName} href={item.url}>
+              <Link className={item.clName} to={item.url}>
                 {item.title}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
-      </nav>
-    )
-  }
+      </Navbar>
+      <Outlet />
+    </Container>
+  )
 }
 
-export default connect()(Navbar)
+export default NavigationBar
