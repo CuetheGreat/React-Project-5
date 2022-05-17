@@ -1,6 +1,5 @@
-
 import { Component, Fragment } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Outlet } from 'react-router-dom'
 import Navbar from '../components/Navbar/Navbar'
 import Landing from '../components/Landing/Landing'
 import DrinksPage from '../containers/DrinkContainer'
@@ -13,17 +12,18 @@ class App extends Component {
   render () {
     return (
       <Fragment>
+        <Navbar />
         <Routes>
-          <Route exact path='/' element={<Navbar />}>
-            <Route path='home' element={ <Landing /> } />
-            <Route path='drinks' element={<DrinksPage />}>
-              <Route exact path='new' element={<DrinkForm />} />
-              <Route path=':slug' element={<DrinkPage />} />
-            </Route>
-            <Route path='login' element={<LoginPage />} />
-            <Route path='profile' element={<UserProfilePage />} />
+          <Route exact path='/' element={<Landing />} />
+          <Route path='drinks' element={<DrinksPage />}>
+            <Route exact path='new' element={<DrinkForm />} />
+            <Route path=':slug' element={<DrinkPage />} />
           </Route>
+          <Route path='log_in' element={<LoginPage />} />
+          <Route path='sign_up' element={<LoginPage />} />
+          <Route path='profile' element={<UserProfilePage />} />
         </Routes>
+        <Outlet />
       </Fragment>
     )
   }

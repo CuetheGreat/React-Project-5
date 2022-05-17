@@ -30,4 +30,5 @@ const postNewDrink = createAsyncThunk('drinks/postNewDrink', async (reqData) => 
   let res = await fetch('http://localhost:3000/api/v1/drinks', post).then(data => data.json())
   return res
 })
+
 export { fetchAllDrinks, fetchDrinkBySlug, postNewDrink }

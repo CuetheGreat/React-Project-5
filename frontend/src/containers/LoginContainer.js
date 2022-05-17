@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { loginUser } from '../feature/Users/userActions'
+import { login } from '../feature/Users/userThunk'
 import LoginForm from '../components/Login/Login'
+
+import './LoginContainer.css'
+import { Container } from 'react-bootstrap'
 
 class LoginContainer extends Component {
   state = {
@@ -15,8 +18,8 @@ class LoginContainer extends Component {
     })
   }
 
-  handleSubmit = (user) => {
-    this.props.loginUser(user)
+  handleSubmit = user => {
+    this.props.login(user)
     this.setState({
       username: '',
       password: ''
@@ -25,7 +28,7 @@ class LoginContainer extends Component {
 
   render () {
     return (
-      <div>
+      <div className='container-fluid login'>
         <LoginForm
           username={this.state.username}
           password={this.state.password}
@@ -39,7 +42,7 @@ class LoginContainer extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    loginUser: user => dispatch(loginUser(user))
+    login: user => dispatch(login(user))
   }
 }
 

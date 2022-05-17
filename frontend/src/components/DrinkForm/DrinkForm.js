@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
-import { Button, Form} from 'react-bootstrap'
+import { Button, Container, Form} from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { postNewDrink } from '../../feature/Drinks/drinkThunk'
 
-class DrinkForm extends Component {
-  constructor () {
-    super()
-    this.state = {
+const defaultState = {
       name: '',
       description: '',
       ingredients_attributes: [{ measure: '', kind: '' }],
@@ -15,6 +12,11 @@ class DrinkForm extends Component {
       garnish: '',
       image: ''
     }
+
+class DrinkForm extends Component {
+  constructor () {
+    super()
+    this.state = defaultState
   }
   /* ------  Handle CHanges in form field ----- */
   handleIngredientChange = (i, e) => {
@@ -82,11 +84,12 @@ class DrinkForm extends Component {
     e.preventDefault()
     console.log(this.props)
     this.props.addDrink(this.state)
+    this.setState(defaultState)
   }
 
   render () {
     return (
-      <div
+      <Container
         className='w-75'
         style={{ padding: '0', margin: '0', textAlign: 'center' }}
       >
@@ -260,7 +263,7 @@ class DrinkForm extends Component {
             Submit
           </Button>
         </Form>
-      </div>
+      </Container>
     )
   }
 }

@@ -29,6 +29,16 @@
   justify-content: end;
   margin-right: 2rem;
 }
+.nav-logo{
+  color: white;
+text-decoration: none;
+padding: 0.5rem 1rem;
+
+}
+.nav-logo:hover{
+  color:white;
+  text-decoration: none;
+}
 
 .nav-links{
   color:white;
@@ -37,7 +47,7 @@
 }
 
 .nav-links:hover {
-color: purple;
+  color: purple;
   background-color: palegoldenrod;
   border-radius: 4px;
   transition: all 0.2s ease-out;

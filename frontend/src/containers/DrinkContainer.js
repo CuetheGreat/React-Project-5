@@ -12,7 +12,6 @@ class DrinkContainer extends Component {
   }
 
   render () {
-    console.log('Drink Page Props:', this.props)
     return !!this.props.drinks[0] ? (
       <Container style={{ display: 'flex' }}>
         <div className='w-25'>

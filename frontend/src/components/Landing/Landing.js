@@ -9,7 +9,6 @@ const Landing = () => {
           A place for all your favorite drink recipes
         </h2>
       </div>
-
     </div>
   )
 }
