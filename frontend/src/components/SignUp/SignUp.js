@@ -15,7 +15,7 @@ const SignUpForm = props => {
     if (!!user) {
       navigate('/profile')
     }
-  }, [user])
+  }, [navigate,user])
 
   return (
     <Container className='form_container' style ={{textAlign:'center'}}>
