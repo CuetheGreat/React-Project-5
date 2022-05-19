@@ -3,6 +3,7 @@ import { Card, Container } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { fetchDrinkBySlug } from '../feature/Drinks/drinkThunk'
+import './DrinkPage.css'
 
 const DrinkPage = props => {
   let { slug } = useParams()
@@ -18,7 +19,7 @@ const DrinkPage = props => {
     <Container className='w-75'>
       <Card style={{justifyContent: 'center'}}>
         <Card.Title>{currentDrink.name}</Card.Title>
-        <Card.Img src={currentDrink.image} style={{width: '50vw'}}/>
+        <Card.Img className='drink-img' src={currentDrink.image}/>
         <Card.Body>
           <Card.Text>{currentDrink.description}</Card.Text>
           <Card.Subtitle>Ingredients</Card.Subtitle>

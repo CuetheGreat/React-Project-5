@@ -5,13 +5,17 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Provider } from 'react-redux'
 import store from './app/store'
 import { BrowserRouter } from 'react-router-dom'
-
+import './index.css'
+import Navbar from './components/Navbar/Navbar'
+import Footer from './components/Footer/Footer'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <Provider store={store}>
     <BrowserRouter>
+      <Navbar />
       <App />
+      <Footer />
     </BrowserRouter>
   </Provider>
 )

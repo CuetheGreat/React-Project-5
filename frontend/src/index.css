@@ -1,0 +1,21 @@
+/* background-image:url('https://i.postimg.cc/Vz74RQFf/vecteezy-blurred-restaurant-scene-with-empty-tabletop-1900916.jpg'); */
+header {
+  position: absolute;
+  width: 100%;
+}
+section {
+  margin-top: auto;
+  margin-bottom: auto;
+  height: calc(100vh - (40px + 30px));
+  background-image:url('https://i.postimg.cc/Vz74RQFf/vecteezy-blurred-restaurant-scene-with-empty-tabletop-1900916.jpg');
+}
+footer {
+position: absolute
+}
+
+img {
+  width: 50%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
