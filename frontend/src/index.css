@@ -4,13 +4,16 @@ header {
   width: 100%;
 }
 section {
-  margin-top: auto;
-  margin-bottom: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: calc(100vh - (40px + 30px));
-  background-image:url('https://i.postimg.cc/Vz74RQFf/vecteezy-blurred-restaurant-scene-with-empty-tabletop-1900916.jpg');
+  background-image: url('https://i.postimg.cc/Vz74RQFf/vecteezy-blurred-restaurant-scene-with-empty-tabletop-1900916.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 footer {
-position: absolute
+  position: absolute;
 }
 
 img {

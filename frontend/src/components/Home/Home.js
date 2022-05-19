@@ -10,7 +10,7 @@ const Home = () => {
         <div className='title-div'>
           <span className='subtitle'>Your personalized bartender</span>
           <div className='title'>
-            One Stop For All Your Favorite Drink Recipes.
+            One Stop For All Of Your Favorite Drink Recipes.
           </div>
           <Link className='cta-btn' to='#'>
             View Drinks
