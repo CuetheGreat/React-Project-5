@@ -1,49 +1,96 @@
-.home-page {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+@media screen and (min-width: 1018px) {
+  .home-page {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .home-splash {
+    margin: auto;
+    display: flex;
+  }
+
+  .title-div {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    justify-content: start;
+    color: white;
+    font-size: 50px;
+    font-weight: bolder;
+  }
+
+  .image-div {
+    width: 50%;
+  }
+
+  .drink-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 66%;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    color: rgba(201, 203, 195, 0.85);
+  }
+
+  .cta-btn {
+    display: block;
+    padding: 7.5px 10px;
+    border: 2px solid #cc5500;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    background: #cc5500;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+  }
 }
 
-.home-page > .home-splash {
-  margin: auto;
-  display: flex;
-}
+@media screen and (max-width: 1017px) {
+  .home-splash {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 
-.title-div {
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-  justify-content: start;
-  color: white;
-  font-size: 50px;
-  font-weight: bolder;
+  .image-div {
+    margin: auto;
+    width: 50%;
+  }
 
-  justify-content: center;
-}
+  .drink-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25vw;
+  }
+  .title-div {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    justify-content: start;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+  }
+  .subtitle {
+    font-size: 1rem;
+    color: rgba(201, 203, 195, 0.85);
+  }
 
-.image-div {
-  width: 50%;
-}
+  .cta-btn {
+    display: block;
+    padding: 7.5px 10px;
+    border: 2px solid #cc5500;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    background: #cc5500;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+  }
 
-.drink-image {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 66%;
-}
-
-.subtitle {
-  font-size: 12px;
-}
-
-.cta-btn {
-  display: block;
-  padding: 7.5px 10px;
-  border: 2px solid #cc5500;
-  border-radius: 25px;
-  color: white;
-  text-decoration: none;
-  background: #cc5500;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1rem;
 }

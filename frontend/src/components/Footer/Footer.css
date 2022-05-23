@@ -3,6 +3,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  height: fit-content;
   background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(97, 96, 115));
   color: white;
   text-align: center;
