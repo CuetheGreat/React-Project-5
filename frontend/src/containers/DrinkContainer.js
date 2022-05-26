@@ -14,15 +14,14 @@ class DrinkContainer extends Component {
   render () {
     return !!this.props.drinks[0] ? (
       <Container style={{ display: 'flex' }}>
-        <div className='w-25'>
+      <Container style={{ display: 'grid', gridTemplateColumns:'repeat(4,auto)', margin: 'auto', padding: '10px' }}>
           {this.props.drinks.map(drink => (
             <DrinkCard key={drink.id} drink={drink} />
-          ))}
-        </div>
+          ))}</Container>
         <Outlet />
       </Container>
     ) : (
-      <div></div>
+      <h1 style={{color: 'white'}}>Loading...</h1>
     )
   }
 }

@@ -7,6 +7,7 @@ import DrinkForm from '../components/DrinkForm/DrinkForm'
 import LoginPage from '../containers/LoginContainer'
 import UserProfilePage from '../components/UserProfile/UserProfile'
 import Home from '../components/Home/Home'
+import About from '../components/About/About'
 
 class App extends Component {
   render () {
@@ -14,6 +15,7 @@ class App extends Component {
       <section id='body'>
         <Routes>
           <Route exact path='/' element={<Home />} />
+          <Route path='about' element={<About />} />
           <Route path='drinks' element={<DrinksPage />}>
             <Route exact path='new' element={<DrinkForm />} />
             <Route path=':slug' element={<DrinkPage />} />
