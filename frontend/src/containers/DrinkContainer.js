@@ -1,42 +1,38 @@
+import React, { useEffect } from 'react';
+import { Container } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { Outlet } from 'react-router';
+import { DrinkCard } from '../components/Card/DrinkCard';
+import { fetchAllDrinks } from '../feature/Drinks/drinkThunk';
 
-import React, { Component } from 'react'
-import { Container } from 'react-bootstrap'
-import { connect } from 'react-redux'
-import { Outlet } from 'react-router'
-import { DrinkCard } from '../components/Card/DrinkCard'
-import { fetchAllDrinks } from '../feature/Drinks/drinkThunk'
+const DrinkContainer = () => {
+  const dispatch = useDispatch();
+  const drinks = useSelector((state) => state.drinks.drinks);
 
-class DrinkContainer extends Component {
-  componentDidMount () {
-    this.props.fetchAllDrinks()
-  }
+  useEffect(() => {
+    dispatch(fetchAllDrinks());
+  }, [dispatch]);
 
-  render () {
-    return !!this.props.drinks[0] ? (
-      <Container style={{ display: 'flex' }}>
-      <Container style={{ display: 'grid', gridTemplateColumns:'repeat(4,auto)', margin: 'auto', padding: '10px' }}>
-          {this.props.drinks.map(drink => (
-            <DrinkCard key={drink.id} drink={drink} />
-          ))}</Container>
-        <Outlet />
+  return drinks.length ? (
+    <Container style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <Container
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '10px',
+          margin: 'auto',
+          padding: '10px',
+        }}
+      >
+        {drinks.map((drink) => (
+          <DrinkCard key={drink.id} drink={drink} />
+        ))}
       </Container>
-    ) : (
-      <h1 style={{color: 'white'}}>Loading...</h1>
-    )
-  }
-}
+      <Outlet />
+    </Container>
+  ) : (
+    <h1 style={{ color: 'white' }}>Loading...</h1>
+  );
+};
 
-const mapStateToProps = state => {
-  return {
-    drinks: state.drinks.drinks,
-    currentDrink: state.drinks.currentDrink
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchAllDrinks: () => dispatch(fetchAllDrinks())
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DrinkContainer)
+export default DrinkContainer;

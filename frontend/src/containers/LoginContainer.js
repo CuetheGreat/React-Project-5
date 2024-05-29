@@ -1,49 +1,37 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { login } from '../feature/Users/userThunk'
-import LoginForm from '../components/Login/Login'
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { login } from '../feature/Users/userThunk';
+import LoginForm from '../components/Login/Login';
 
-import './LoginContainer.css'
+import './LoginContainer.css';
 
+const LoginContainer = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
-class LoginContainer extends Component {
-  state = {
-    username: '',
-    password: ''
-  }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name === 'username') setUsername(value);
+    if (name === 'password') setPassword(value);
+  };
 
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-  }
+  const handleSubmit = (user) => {
+    dispatch(login(user));
+    setUsername('');
+    setPassword('');
+  };
 
-  handleSubmit = user => {
-    this.props.login(user)
-    this.setState({
-      username: '',
-      password: ''
-    })
-  }
+  return (
+    <div className='container-fluid login'>
+      <LoginForm
+        username={username}
+        password={password}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+      />
+    </div>
+  );
+};
 
-  render () {
-    return (
-      <div className='container-fluid login'>
-        <LoginForm
-          username={this.state.username}
-          password={this.state.password}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        />
-      </div>
-    )
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    login: user => dispatch(login(user))
-  }
-}
-
-export default connect(null, mapDispatchToProps)(LoginContainer)
+export default LoginContainer;

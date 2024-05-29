@@ -1,13 +1,13 @@
 .login {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   background-image: url('https://www.svgheart.com/wp-content/uploads/2020/07/drink-and-fruit-free-svg-file.png');
   height: 100vh;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover; /* Ensure the background image covers the entire container */
   background-color: palegoldenrod;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
