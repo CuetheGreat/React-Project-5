@@ -1,3 +1,3 @@
 class IngredientSerializer < ActiveModel::Serializer
-  attributes :measure, :kind
+  attributes :id, :measure, :kind
 end

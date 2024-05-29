@@ -67,6 +67,19 @@ attributes = [
   }
 ]
 
+users = [
+  {
+    username: "clayonstewart",
+    email: "email@email.com",
+    password: "example",
+    bio: "Sometext",
+    avatar: "https://cdn.shopify.com/s/files/1/0583/3185/products/Coconut_PassionfruitMojito_5000x.jpg?v=1614055790"
+  }
+]
 attributes.each do |attribute|
   Drink.create(attribute)
+end
+
+users.each do |user|
+  User.create(user)
 end

@@ -21478,3 +21478,556 @@ Processing by Api::V1::DrinksController#show as */*
 Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.6ms | Allocations: 2632)
 
 
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/api/v1/drinks" for ::1 at 2024-05-29 00:40:16 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mInstruction Load (0.4ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (25.56ms)
+Completed 200 OK in 57ms (Views: 34.5ms | ActiveRecord: 1.7ms | Allocations: 40246)
+
+
+Started GET "/api/v1/drinks/toronto" for ::1 at 2024-05-29 00:40:20 -0400
+Processing by Api::V1::DrinksController#show as */*
+  Parameters: {"slug"=>"toronto"}
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "toronto"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/drinks_controller.rb:19:in `show'
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:21:in `show'
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:21:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.31ms)
+Completed 200 OK in 22ms (Views: 16.9ms | ActiveRecord: 0.5ms | Allocations: 4413)
+
+
+Started GET "/api/v1/drinks" for ::1 at 2024-05-29 00:40:59 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (1.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.06ms)
+Completed 200 OK in 37ms (Views: 33.2ms | ActiveRecord: 1.6ms | Allocations: 10651)
+
+
+Started GET "/api/v1/drinks" for ::1 at 2024-05-29 00:42:52 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.6ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.79ms)
+Completed 200 OK in 72ms (Views: 29.1ms | ActiveRecord: 1.0ms | Allocations: 10568)
+
+
+Started GET "/api/v1/drinks/1934-cosmo" for ::1 at 2024-05-29 00:43:00 -0400
+Processing by Api::V1::DrinksController#show as */*
+  Parameters: {"slug"=>"1934-cosmo"}
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "1934-cosmo"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/drinks_controller.rb:19:in `show'
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:21:in `show'
+[active_model_serializers]   [1m[36mInstruction Load (0.2ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:21:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (17.0ms)
+Completed 200 OK in 29ms (Views: 17.8ms | ActiveRecord: 0.7ms | Allocations: 3384)
+
+
+Started GET "/api/v1/drinks" for ::1 at 2024-05-29 00:43:04 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mInstruction Load (0.3ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/drinks_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.21ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.9ms | Allocations: 10552)
+
+
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220415140810)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "bio" varchar, "avatar" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220415140810"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngredients (20220416172208)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "measure" varchar, "kind" varchar, "drink_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220416172208"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateInstructions (20220417004450)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "instructions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "order" integer, "step" varchar, "drink_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220417004450"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDrinks (20220417005853)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "drinks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "ingredient_count" integer, "instruction_count" integer, "glass" varchar, "garnish" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220417005853"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddSlugToDrinks (20220418135020)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "drinks" ADD "slug" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220418135020"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-05-29 04:55:45.886772"], ["updated_at", "2024-05-29 04:55:45.886772"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220415140810)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "bio" varchar, "avatar" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220415140810"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngredients (20220416172208)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "measure" varchar, "kind" varchar, "drink_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220416172208"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateInstructions (20220417004450)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "instructions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "order" integer, "step" varchar, "drink_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220417004450"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDrinks (20220417005853)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "drinks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "ingredient_count" integer, "instruction_count" integer, "glass" varchar, "garnish" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220417005853"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddSlugToDrinks (20220418135020)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "drinks" ADD "slug" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220418135020"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-05-29 05:00:55.102798"], ["updated_at", "2024-05-29 05:00:55.102798"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "TORONTO"], ["LIMIT", 1]]
+  [1m[36mDrink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "toronto"], ["LIMIT", 1]]
+  ↳ app/models/drink.rb:27:in `generate_slug'
+  [1m[36mDrink Create (0.7ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "description", "ingredient_count", "instruction_count", "glass", "garnish", "image", "created_at", "updated_at", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "TORONTO"], ["description", "This sophisticated cocktail is essentially an Old Fashioned emboldened with a touch of fernet."], ["ingredient_count", nil], ["instruction_count", nil], ["glass", "coupe"], ["garnish", "orange peel"], ["image", "https://cdn.shopify.com/s/files/1/0583/3185/products/Toronto_IMG_6726_800x.jpg?v=1461183146"], ["created_at", "2024-05-29 05:01:38.131049"], ["updated_at", "2024-05-29 05:01:38.131049"], ["slug", "toronto"]]
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "¼ oz"], ["kind", "Classic Gum Syrup"], ["drink_id", 1], ["created_at", "2024-05-29 05:01:38.260150"], ["updated_at", "2024-05-29 05:01:38.260150"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "2 oz"], ["kind", "rye whiskey"], ["drink_id", 1], ["created_at", "2024-05-29 05:01:38.260849"], ["updated_at", "2024-05-29 05:01:38.260849"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "¼ oz"], ["kind", "fernet"], ["drink_id", 1], ["created_at", "2024-05-29 05:01:38.261361"], ["updated_at", "2024-05-29 05:01:38.261361"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "2 dashes"], ["kind", "aromatic bitters"], ["drink_id", 1], ["created_at", "2024-05-29 05:01:38.261805"], ["updated_at", "2024-05-29 05:01:38.261805"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 1], ["step", "Add all to a mixing glass with ice"], ["drink_id", 1], ["created_at", "2024-05-29 05:01:38.262364"], ["updated_at", "2024-05-29 05:01:38.262364"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 2], ["step", "Stir for 20 seconds and strain into a chilled coupe"], ["drink_id", 1], ["created_at", "2024-05-29 05:01:38.262826"], ["updated_at", "2024-05-29 05:01:38.262826"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 3], ["step", "Express an orange peel and garnish"], ["drink_id", 1], ["created_at", "2024-05-29 05:01:38.263270"], ["updated_at", "2024-05-29 05:01:38.263270"]]
+  [1m[36mInstruction Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+  ↳ app/models/drink.rb:16:in `update_instruction_count'
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "instruction_count" = ? WHERE "drinks"."id" = ?[0m  [["instruction_count", 3], ["id", 1]]
+  ↳ app/models/drink.rb:16:in `update_instruction_count'
+  [1m[36mIngredient Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+  ↳ app/models/drink.rb:20:in `update_ingredient_count'
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "ingredient_count" = ? WHERE "drinks"."id" = ?[0m  [["ingredient_count", 4], ["id", 1]]
+  ↳ app/models/drink.rb:20:in `update_ingredient_count'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "1934 COSMO"], ["LIMIT", 1]]
+  [1m[36mDrink Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "1934-cosmo"], ["LIMIT", 1]]
+  ↳ app/models/drink.rb:27:in `generate_slug'
+  [1m[36mDrink Create (0.2ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "description", "ingredient_count", "instruction_count", "glass", "garnish", "image", "created_at", "updated_at", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "1934 COSMO"], ["description", "A simple sour can be so different with the right base spirit. The 1934 Cosmo hits its stride with a complex and floral gin. Grab a bottle whose botanicals include multiple berries and flowers. We'd suggest Monkey 47."], ["ingredient_count", nil], ["instruction_count", nil], ["glass", "coupe"], ["garnish", "orange twist"], ["image", "https://cdn.shopify.com/s/files/1/0583/3185/products/1934CosmoShopify_5000x.png?v=1601269549"], ["created_at", "2024-05-29 05:01:38.267694"], ["updated_at", "2024-05-29 05:01:38.267694"], ["slug", "1934-cosmo"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "½ oz"], ["kind", "Raspberry Gum Syrup"], ["drink_id", 2], ["created_at", "2024-05-29 05:01:38.268824"], ["updated_at", "2024-05-29 05:01:38.268824"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "2 oz"], ["kind", "gin"], ["drink_id", 2], ["created_at", "2024-05-29 05:01:38.269381"], ["updated_at", "2024-05-29 05:01:38.269381"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "½ oz"], ["kind", "lemon juice"], ["drink_id", 2], ["created_at", "2024-05-29 05:01:38.269900"], ["updated_at", "2024-05-29 05:01:38.269900"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 1], ["step", "Add all ingredients to a cocktail shaker"], ["drink_id", 2], ["created_at", "2024-05-29 05:01:38.270422"], ["updated_at", "2024-05-29 05:01:38.270422"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 2], ["step", "Add ice and shake hard for 20 seconds"], ["drink_id", 2], ["created_at", "2024-05-29 05:01:38.270951"], ["updated_at", "2024-05-29 05:01:38.270951"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 3], ["step", "Strain into a chilled coupe"], ["drink_id", 2], ["created_at", "2024-05-29 05:01:38.271423"], ["updated_at", "2024-05-29 05:01:38.271423"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 4], ["step", "Garnish with an orange twist"], ["drink_id", 2], ["created_at", "2024-05-29 05:01:38.271868"], ["updated_at", "2024-05-29 05:01:38.271868"]]
+  [1m[36mInstruction Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+  ↳ app/models/drink.rb:16:in `update_instruction_count'
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "instruction_count" = ? WHERE "drinks"."id" = ?[0m  [["instruction_count", 4], ["id", 2]]
+  ↳ app/models/drink.rb:16:in `update_instruction_count'
+  [1m[36mIngredient Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+  ↳ app/models/drink.rb:20:in `update_ingredient_count'
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "ingredient_count" = ? WHERE "drinks"."id" = ?[0m  [["ingredient_count", 3], ["id", 2]]
+  ↳ app/models/drink.rb:20:in `update_ingredient_count'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "COCONUT + PASSIONFRUIT MOJITO"], ["LIMIT", 1]]
+  [1m[36mDrink Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "coconut-passionfruit-mojito"], ["LIMIT", 1]]
+  ↳ app/models/drink.rb:27:in `generate_slug'
+  [1m[36mDrink Create (0.1ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "description", "ingredient_count", "instruction_count", "glass", "garnish", "image", "created_at", "updated_at", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "COCONUT + PASSIONFRUIT MOJITO"], ["description", "The ultimate cabana cocktail. Pick a high-character light rum."], ["ingredient_count", nil], ["instruction_count", nil], ["glass", "highball"], ["garnish", "mint sprig"], ["image", "https://cdn.shopify.com/s/files/1/0583/3185/products/Coconut_PassionfruitMojito_5000x.jpg?v=1614055790"], ["created_at", "2024-05-29 05:01:38.275583"], ["updated_at", "2024-05-29 05:01:38.275583"], ["slug", "coconut-passionfruit-mojito"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "½ oz"], ["kind", "Toasted Coconut Syrup"], ["drink_id", 3], ["created_at", "2024-05-29 05:01:38.276424"], ["updated_at", "2024-05-29 05:01:38.276424"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "¼ oz"], ["kind", "Tropical Passionfruit Syrup"], ["drink_id", 3], ["created_at", "2024-05-29 05:01:38.276882"], ["updated_at", "2024-05-29 05:01:38.276882"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "2 oz"], ["kind", "light rum"], ["drink_id", 3], ["created_at", "2024-05-29 05:01:38.280748"], ["updated_at", "2024-05-29 05:01:38.280748"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "¾ oz"], ["kind", "lime juice"], ["drink_id", 3], ["created_at", "2024-05-29 05:01:38.284630"], ["updated_at", "2024-05-29 05:01:38.284630"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "3 oz"], ["kind", "club soda"], ["drink_id", 3], ["created_at", "2024-05-29 05:01:38.286961"], ["updated_at", "2024-05-29 05:01:38.286961"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "5-6"], ["kind", "leaves fresh mint"], ["drink_id", 3], ["created_at", "2024-05-29 05:01:38.289665"], ["updated_at", "2024-05-29 05:01:38.289665"]]
+  [1m[36mInstruction Create (0.1ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 1], ["step", "Add all ingredients except club soda to a cocktail shaker "], ["drink_id", 3], ["created_at", "2024-05-29 05:01:38.292587"], ["updated_at", "2024-05-29 05:01:38.292587"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 2], ["step", "Add ice and short shake for 5 seconds"], ["drink_id", 3], ["created_at", "2024-05-29 05:01:38.293435"], ["updated_at", "2024-05-29 05:01:38.293435"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 3], ["step", "Fine strain into a chilled highball filled with ice and club soda"], ["drink_id", 3], ["created_at", "2024-05-29 05:01:38.295600"], ["updated_at", "2024-05-29 05:01:38.295600"]]
+  [1m[36mInstruction Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+  ↳ app/models/drink.rb:16:in `update_instruction_count'
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "instruction_count" = ? WHERE "drinks"."id" = ?[0m  [["instruction_count", 3], ["id", 3]]
+  ↳ app/models/drink.rb:16:in `update_instruction_count'
+  [1m[36mIngredient Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+  ↳ app/models/drink.rb:20:in `update_ingredient_count'
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "ingredient_count" = ? WHERE "drinks"."id" = ?[0m  [["ingredient_count", 6], ["id", 3]]
+  ↳ app/models/drink.rb:20:in `update_ingredient_count'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "email@email.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220415140810)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "bio" varchar, "avatar" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220415140810"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngredients (20220416172208)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "measure" varchar, "kind" varchar, "drink_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220416172208"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateInstructions (20220417004450)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "instructions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "order" integer, "step" varchar, "drink_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220417004450"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDrinks (20220417005853)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "drinks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "ingredient_count" integer, "instruction_count" integer, "glass" varchar, "garnish" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220417005853"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddSlugToDrinks (20220418135020)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "drinks" ADD "slug" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220418135020"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-05-29 05:05:44.776163"], ["updated_at", "2024-05-29 05:05:44.776163"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220415140810)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "bio" varchar, "avatar" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220415140810"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngredients (20220416172208)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "measure" varchar, "kind" varchar, "drink_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220416172208"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateInstructions (20220417004450)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "instructions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "order" integer, "step" varchar, "drink_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220417004450"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDrinks (20220417005853)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "drinks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "ingredient_count" integer, "instruction_count" integer, "glass" varchar, "garnish" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220417005853"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddSlugToDrinks (20220418135020)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "drinks" ADD "slug" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220418135020"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-05-29 05:06:51.917815"], ["updated_at", "2024-05-29 05:06:51.917815"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "TORONTO"], ["LIMIT", 1]]
+  [1m[36mDrink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "toronto"], ["LIMIT", 1]]
+  ↳ app/models/drink.rb:27:in `generate_slug'
+  [1m[36mDrink Create (0.2ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "description", "ingredient_count", "instruction_count", "glass", "garnish", "image", "created_at", "updated_at", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "TORONTO"], ["description", "This sophisticated cocktail is essentially an Old Fashioned emboldened with a touch of fernet."], ["ingredient_count", nil], ["instruction_count", nil], ["glass", "coupe"], ["garnish", "orange peel"], ["image", "https://cdn.shopify.com/s/files/1/0583/3185/products/Toronto_IMG_6726_800x.jpg?v=1461183146"], ["created_at", "2024-05-29 05:06:52.865756"], ["updated_at", "2024-05-29 05:06:52.865756"], ["slug", "toronto"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "¼ oz"], ["kind", "Classic Gum Syrup"], ["drink_id", 1], ["created_at", "2024-05-29 05:06:52.971430"], ["updated_at", "2024-05-29 05:06:52.971430"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "2 oz"], ["kind", "rye whiskey"], ["drink_id", 1], ["created_at", "2024-05-29 05:06:52.971989"], ["updated_at", "2024-05-29 05:06:52.971989"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "¼ oz"], ["kind", "fernet"], ["drink_id", 1], ["created_at", "2024-05-29 05:06:52.972459"], ["updated_at", "2024-05-29 05:06:52.972459"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "2 dashes"], ["kind", "aromatic bitters"], ["drink_id", 1], ["created_at", "2024-05-29 05:06:52.972904"], ["updated_at", "2024-05-29 05:06:52.972904"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 1], ["step", "Add all to a mixing glass with ice"], ["drink_id", 1], ["created_at", "2024-05-29 05:06:52.973375"], ["updated_at", "2024-05-29 05:06:52.973375"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 2], ["step", "Stir for 20 seconds and strain into a chilled coupe"], ["drink_id", 1], ["created_at", "2024-05-29 05:06:52.973838"], ["updated_at", "2024-05-29 05:06:52.973838"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 3], ["step", "Express an orange peel and garnish"], ["drink_id", 1], ["created_at", "2024-05-29 05:06:52.974278"], ["updated_at", "2024-05-29 05:06:52.974278"]]
+  [1m[36mInstruction Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+  ↳ app/models/drink.rb:16:in `update_instruction_count'
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "instruction_count" = ? WHERE "drinks"."id" = ?[0m  [["instruction_count", 3], ["id", 1]]
+  ↳ app/models/drink.rb:16:in `update_instruction_count'
+  [1m[36mIngredient Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+  ↳ app/models/drink.rb:20:in `update_ingredient_count'
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "ingredient_count" = ? WHERE "drinks"."id" = ?[0m  [["ingredient_count", 4], ["id", 1]]
+  ↳ app/models/drink.rb:20:in `update_ingredient_count'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "1934 COSMO"], ["LIMIT", 1]]
+  [1m[36mDrink Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "1934-cosmo"], ["LIMIT", 1]]
+  ↳ app/models/drink.rb:27:in `generate_slug'
+  [1m[36mDrink Create (0.1ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "description", "ingredient_count", "instruction_count", "glass", "garnish", "image", "created_at", "updated_at", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "1934 COSMO"], ["description", "A simple sour can be so different with the right base spirit. The 1934 Cosmo hits its stride with a complex and floral gin. Grab a bottle whose botanicals include multiple berries and flowers. We'd suggest Monkey 47."], ["ingredient_count", nil], ["instruction_count", nil], ["glass", "coupe"], ["garnish", "orange twist"], ["image", "https://cdn.shopify.com/s/files/1/0583/3185/products/1934CosmoShopify_5000x.png?v=1601269549"], ["created_at", "2024-05-29 05:06:52.978598"], ["updated_at", "2024-05-29 05:06:52.978598"], ["slug", "1934-cosmo"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "½ oz"], ["kind", "Raspberry Gum Syrup"], ["drink_id", 2], ["created_at", "2024-05-29 05:06:52.979435"], ["updated_at", "2024-05-29 05:06:52.979435"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "2 oz"], ["kind", "gin"], ["drink_id", 2], ["created_at", "2024-05-29 05:06:52.979889"], ["updated_at", "2024-05-29 05:06:52.979889"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "½ oz"], ["kind", "lemon juice"], ["drink_id", 2], ["created_at", "2024-05-29 05:06:52.980317"], ["updated_at", "2024-05-29 05:06:52.980317"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 1], ["step", "Add all ingredients to a cocktail shaker"], ["drink_id", 2], ["created_at", "2024-05-29 05:06:52.980749"], ["updated_at", "2024-05-29 05:06:52.980749"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 2], ["step", "Add ice and shake hard for 20 seconds"], ["drink_id", 2], ["created_at", "2024-05-29 05:06:52.981200"], ["updated_at", "2024-05-29 05:06:52.981200"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 3], ["step", "Strain into a chilled coupe"], ["drink_id", 2], ["created_at", "2024-05-29 05:06:52.981633"], ["updated_at", "2024-05-29 05:06:52.981633"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 4], ["step", "Garnish with an orange twist"], ["drink_id", 2], ["created_at", "2024-05-29 05:06:52.982082"], ["updated_at", "2024-05-29 05:06:52.982082"]]
+  [1m[36mInstruction Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+  ↳ app/models/drink.rb:16:in `update_instruction_count'
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "instruction_count" = ? WHERE "drinks"."id" = ?[0m  [["instruction_count", 4], ["id", 2]]
+  ↳ app/models/drink.rb:16:in `update_instruction_count'
+  [1m[36mIngredient Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+  ↳ app/models/drink.rb:20:in `update_ingredient_count'
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "ingredient_count" = ? WHERE "drinks"."id" = ?[0m  [["ingredient_count", 3], ["id", 2]]
+  ↳ app/models/drink.rb:20:in `update_ingredient_count'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "COCONUT + PASSIONFRUIT MOJITO"], ["LIMIT", 1]]
+  [1m[36mDrink Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "coconut-passionfruit-mojito"], ["LIMIT", 1]]
+  ↳ app/models/drink.rb:27:in `generate_slug'
+  [1m[36mDrink Create (0.1ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "description", "ingredient_count", "instruction_count", "glass", "garnish", "image", "created_at", "updated_at", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "COCONUT + PASSIONFRUIT MOJITO"], ["description", "The ultimate cabana cocktail. Pick a high-character light rum."], ["ingredient_count", nil], ["instruction_count", nil], ["glass", "highball"], ["garnish", "mint sprig"], ["image", "https://cdn.shopify.com/s/files/1/0583/3185/products/Coconut_PassionfruitMojito_5000x.jpg?v=1614055790"], ["created_at", "2024-05-29 05:06:52.985850"], ["updated_at", "2024-05-29 05:06:52.985850"], ["slug", "coconut-passionfruit-mojito"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "½ oz"], ["kind", "Toasted Coconut Syrup"], ["drink_id", 3], ["created_at", "2024-05-29 05:06:52.986786"], ["updated_at", "2024-05-29 05:06:52.986786"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "¼ oz"], ["kind", "Tropical Passionfruit Syrup"], ["drink_id", 3], ["created_at", "2024-05-29 05:06:52.987335"], ["updated_at", "2024-05-29 05:06:52.987335"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "2 oz"], ["kind", "light rum"], ["drink_id", 3], ["created_at", "2024-05-29 05:06:52.987813"], ["updated_at", "2024-05-29 05:06:52.987813"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "¾ oz"], ["kind", "lime juice"], ["drink_id", 3], ["created_at", "2024-05-29 05:06:52.988299"], ["updated_at", "2024-05-29 05:06:52.988299"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "3 oz"], ["kind", "club soda"], ["drink_id", 3], ["created_at", "2024-05-29 05:06:52.988786"], ["updated_at", "2024-05-29 05:06:52.988786"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "5-6"], ["kind", "leaves fresh mint"], ["drink_id", 3], ["created_at", "2024-05-29 05:06:52.989256"], ["updated_at", "2024-05-29 05:06:52.989256"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 1], ["step", "Add all ingredients except club soda to a cocktail shaker "], ["drink_id", 3], ["created_at", "2024-05-29 05:06:52.989723"], ["updated_at", "2024-05-29 05:06:52.989723"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 2], ["step", "Add ice and short shake for 5 seconds"], ["drink_id", 3], ["created_at", "2024-05-29 05:06:52.990216"], ["updated_at", "2024-05-29 05:06:52.990216"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 3], ["step", "Fine strain into a chilled highball filled with ice and club soda"], ["drink_id", 3], ["created_at", "2024-05-29 05:06:52.990665"], ["updated_at", "2024-05-29 05:06:52.990665"]]
+  [1m[36mInstruction Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+  ↳ app/models/drink.rb:16:in `update_instruction_count'
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "instruction_count" = ? WHERE "drinks"."id" = ?[0m  [["instruction_count", 3], ["id", 3]]
+  ↳ app/models/drink.rb:16:in `update_instruction_count'
+  [1m[36mIngredient Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+  ↳ app/models/drink.rb:20:in `update_ingredient_count'
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "ingredient_count" = ? WHERE "drinks"."id" = ?[0m  [["ingredient_count", 6], ["id", 3]]
+  ↳ app/models/drink.rb:20:in `update_ingredient_count'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "clayonstewart"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "email@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "bio", "avatar", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "clayonstewart"], ["password_digest", "[FILTERED]"], ["bio", "Sometext"], ["avatar", "https://cdn.shopify.com/s/files/1/0583/3185/products/Coconut_PassionfruitMojito_5000x.jpg?v=1614055790"], ["email", "email@email.com"], ["created_at", "2024-05-29 05:06:53.256252"], ["updated_at", "2024-05-29 05:06:53.256252"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "TORONTO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "1934 COSMO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "COCONUT + PASSIONFRUIT MOJITO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "clayonstewart"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "email@email.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "TORONTO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "1934 COSMO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "COCONUT + PASSIONFRUIT MOJITO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "clayonstewart"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "email@email.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "TORONTO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "1934 COSMO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "COCONUT + PASSIONFRUIT MOJITO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "clayonstewart"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "email@email.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m

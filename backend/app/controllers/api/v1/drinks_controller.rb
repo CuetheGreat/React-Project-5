@@ -1,5 +1,5 @@
 class Api::V1::DrinksController < ApplicationController
-  skip_before_action :authorized
+  skip_before_action :authorized, only: [:index, :show]
 
   def index
     drinks = Drink.all
@@ -7,8 +7,8 @@ class Api::V1::DrinksController < ApplicationController
   end
 
   def create
-    drink = Drink.create(drink_params)
-    if drink.valid?
+    drink = Drink.new(drink_params)
+    if drink.save
       render json: { drinks: [DrinkSerializer.new(drink)] }, status: :created
     else
       render json: { message: drink.errors.full_messages }, status: :unprocessable_entity
@@ -17,13 +17,21 @@ class Api::V1::DrinksController < ApplicationController
 
   def show
     drink = Drink.find_by(slug: params[:slug])
-    render json: { drinks: [DrinkSerializer.new(drink)] }, status: :ok
+    if drink
+      render json: { drinks: [DrinkSerializer.new(drink)] }, status: :ok
+    else
+      render json: { message: 'Drink not found' }, status: :not_found
+    end
   end
 
-  def delete
+  def destroy
     drink = Drink.find_by(slug: params[:slug])
-    drink.destroy
-    render json: { message: 'Drink has been destroyed' }, status: :accepted
+    if drink
+      drink.destroy
+      render json: { message: 'Drink has been destroyed' }, status: :accepted
+    else
+      render json: { message: 'Drink not found' }, status: :not_found
+    end
   end
 
   private
@@ -31,7 +39,7 @@ class Api::V1::DrinksController < ApplicationController
   def drink_params
     params.require(:drink)
           .permit(:name, :description, :glass,
-                  :garnish, :image, ingredients_attributes: %i[measure kind],
-                                    instructions_attributes: %i[order step])
+                  :garnish, :image, ingredients_attributes: [:measure, :kind],
+                                    instructions_attributes: [:order, :step])
   end
 end

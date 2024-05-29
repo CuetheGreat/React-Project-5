@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.0'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
+gem 'rails', '~> 7.0.2.3'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
+gem 'nio4r', '2.5.9' # or the latest version available
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -51,9 +52,6 @@ group :development do
 end
 
 gem 'jwt', '~> 2.3'
-
 gem 'active_model_serializers', '~> 0.10.13'
-
 gem 'faker', '~> 2.20'
-
-gem 'rspec', '~> 3.11'
+gem 'rspec-rails', '~> 5.0'

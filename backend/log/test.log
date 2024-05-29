@@ -1,0 +1,654 @@
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "drinks"[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "drinks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "ingredient_count" integer, "instruction_count" integer, "glass" varchar, "garnish" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "slug" varchar)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "ingredients"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "measure" varchar, "kind" varchar, "drink_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "instructions"[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "instructions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "order" integer, "step" varchar, "drink_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "bio" varchar, "avatar" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220418135020)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220415140810),
+(20220416172208),
+(20220417004450),
+(20220417005853);
+
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2024-05-29 04:51:58.847373"], ["updated_at", "2024-05-29 04:51:58.847373"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "6dbac1e023346051df0843d966c82676625cfe5b"], ["created_at", "2024-05-29 04:51:58.848773"], ["updated_at", "2024-05-29 04:51:58.848773"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (2.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "drinks"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "drinks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "ingredient_count" integer, "instruction_count" integer, "glass" varchar, "garnish" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "slug" varchar)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "ingredients"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "measure" varchar, "kind" varchar, "drink_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "instructions"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "instructions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "order" integer, "step" varchar, "drink_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "bio" varchar, "avatar" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220418135020)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220415140810),
+(20220416172208),
+(20220417004450),
+(20220417005853);
+
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2024-05-29 05:21:54.501923"], ["updated_at", "2024-05-29 05:21:54.501923"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "901b02e81ce1a0aef63086ba8a879e2cec0b86ff"], ["created_at", "2024-05-29 05:21:54.503552"], ["updated_at", "2024-05-29 05:21:54.503552"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "TORONTO"], ["LIMIT", 1]]
+  [1m[36mDrink Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "toronto"], ["LIMIT", 1]]
+  [1m[36mDrink Create (0.8ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "description", "ingredient_count", "instruction_count", "glass", "garnish", "image", "created_at", "updated_at", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "TORONTO"], ["description", "This sophisticated cocktail is essentially an Old Fashioned emboldened with a touch of fernet."], ["ingredient_count", nil], ["instruction_count", nil], ["glass", "coupe"], ["garnish", "orange peel"], ["image", "https://cdn.shopify.com/s/files/1/0583/3185/products/Toronto_IMG_6726_800x.jpg?v=1461183146"], ["created_at", "2024-05-29 05:23:31.309871"], ["updated_at", "2024-05-29 05:23:31.309871"], ["slug", "toronto"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "¼ oz"], ["kind", "Classic Gum Syrup"], ["drink_id", 1], ["created_at", "2024-05-29 05:23:31.430693"], ["updated_at", "2024-05-29 05:23:31.430693"]]
+  [1m[36mIngredient Create (0.8ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "2 oz"], ["kind", "rye whiskey"], ["drink_id", 1], ["created_at", "2024-05-29 05:23:31.430942"], ["updated_at", "2024-05-29 05:23:31.430942"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "¼ oz"], ["kind", "fernet"], ["drink_id", 1], ["created_at", "2024-05-29 05:23:31.431850"], ["updated_at", "2024-05-29 05:23:31.431850"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "2 dashes"], ["kind", "aromatic bitters"], ["drink_id", 1], ["created_at", "2024-05-29 05:23:31.432012"], ["updated_at", "2024-05-29 05:23:31.432012"]]
+  [1m[36mInstruction Create (2.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 1], ["step", "Add all to a mixing glass with ice"], ["drink_id", 1], ["created_at", "2024-05-29 05:23:31.432807"], ["updated_at", "2024-05-29 05:23:31.432807"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 2], ["step", "Stir for 20 seconds and strain into a chilled coupe"], ["drink_id", 1], ["created_at", "2024-05-29 05:23:31.435009"], ["updated_at", "2024-05-29 05:23:31.435009"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 3], ["step", "Express an orange peel and garnish"], ["drink_id", 1], ["created_at", "2024-05-29 05:23:31.435423"], ["updated_at", "2024-05-29 05:23:31.435423"]]
+  [1m[36mInstruction Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "instruction_count" = ? WHERE "drinks"."id" = ?[0m  [["instruction_count", 3], ["id", 1]]
+  [1m[36mIngredient Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "ingredient_count" = ? WHERE "drinks"."id" = ?[0m  [["ingredient_count", 4], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "1934 COSMO"], ["LIMIT", 1]]
+  [1m[36mDrink Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "1934-cosmo"], ["LIMIT", 1]]
+  [1m[36mDrink Create (0.1ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "description", "ingredient_count", "instruction_count", "glass", "garnish", "image", "created_at", "updated_at", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "1934 COSMO"], ["description", "A simple sour can be so different with the right base spirit. The 1934 Cosmo hits its stride with a complex and floral gin. Grab a bottle whose botanicals include multiple berries and flowers. We'd suggest Monkey 47."], ["ingredient_count", nil], ["instruction_count", nil], ["glass", "coupe"], ["garnish", "orange twist"], ["image", "https://cdn.shopify.com/s/files/1/0583/3185/products/1934CosmoShopify_5000x.png?v=1601269549"], ["created_at", "2024-05-29 05:23:31.444710"], ["updated_at", "2024-05-29 05:23:31.444710"], ["slug", "1934-cosmo"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "½ oz"], ["kind", "Raspberry Gum Syrup"], ["drink_id", 2], ["created_at", "2024-05-29 05:23:31.445238"], ["updated_at", "2024-05-29 05:23:31.445238"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "2 oz"], ["kind", "gin"], ["drink_id", 2], ["created_at", "2024-05-29 05:23:31.445654"], ["updated_at", "2024-05-29 05:23:31.445654"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "½ oz"], ["kind", "lemon juice"], ["drink_id", 2], ["created_at", "2024-05-29 05:23:31.445806"], ["updated_at", "2024-05-29 05:23:31.445806"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 1], ["step", "Add all ingredients to a cocktail shaker"], ["drink_id", 2], ["created_at", "2024-05-29 05:23:31.445963"], ["updated_at", "2024-05-29 05:23:31.445963"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 2], ["step", "Add ice and shake hard for 20 seconds"], ["drink_id", 2], ["created_at", "2024-05-29 05:23:31.446128"], ["updated_at", "2024-05-29 05:23:31.446128"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 3], ["step", "Strain into a chilled coupe"], ["drink_id", 2], ["created_at", "2024-05-29 05:23:31.446284"], ["updated_at", "2024-05-29 05:23:31.446284"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 4], ["step", "Garnish with an orange twist"], ["drink_id", 2], ["created_at", "2024-05-29 05:23:31.446433"], ["updated_at", "2024-05-29 05:23:31.446433"]]
+  [1m[36mInstruction Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "instruction_count" = ? WHERE "drinks"."id" = ?[0m  [["instruction_count", 4], ["id", 2]]
+  [1m[36mIngredient Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "ingredient_count" = ? WHERE "drinks"."id" = ?[0m  [["ingredient_count", 3], ["id", 2]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrink Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE LOWER("drinks"."name") = LOWER(?) LIMIT ?[0m  [["name", "COCONUT + PASSIONFRUIT MOJITO"], ["LIMIT", 1]]
+  [1m[36mDrink Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "coconut-passionfruit-mojito"], ["LIMIT", 1]]
+  [1m[36mDrink Create (0.1ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "description", "ingredient_count", "instruction_count", "glass", "garnish", "image", "created_at", "updated_at", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "COCONUT + PASSIONFRUIT MOJITO"], ["description", "The ultimate cabana cocktail. Pick a high-character light rum."], ["ingredient_count", nil], ["instruction_count", nil], ["glass", "highball"], ["garnish", "mint sprig"], ["image", "https://cdn.shopify.com/s/files/1/0583/3185/products/Coconut_PassionfruitMojito_5000x.jpg?v=1614055790"], ["created_at", "2024-05-29 05:23:31.448344"], ["updated_at", "2024-05-29 05:23:31.448344"], ["slug", "coconut-passionfruit-mojito"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "½ oz"], ["kind", "Toasted Coconut Syrup"], ["drink_id", 3], ["created_at", "2024-05-29 05:23:31.448828"], ["updated_at", "2024-05-29 05:23:31.448828"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "¼ oz"], ["kind", "Tropical Passionfruit Syrup"], ["drink_id", 3], ["created_at", "2024-05-29 05:23:31.449021"], ["updated_at", "2024-05-29 05:23:31.449021"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "2 oz"], ["kind", "light rum"], ["drink_id", 3], ["created_at", "2024-05-29 05:23:31.449177"], ["updated_at", "2024-05-29 05:23:31.449177"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "¾ oz"], ["kind", "lime juice"], ["drink_id", 3], ["created_at", "2024-05-29 05:23:31.449345"], ["updated_at", "2024-05-29 05:23:31.449345"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "3 oz"], ["kind", "club soda"], ["drink_id", 3], ["created_at", "2024-05-29 05:23:31.449497"], ["updated_at", "2024-05-29 05:23:31.449497"]]
+  [1m[36mIngredient Create (0.0ms)[0m  [1m[32mINSERT INTO "ingredients" ("measure", "kind", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["measure", "5-6"], ["kind", "leaves fresh mint"], ["drink_id", 3], ["created_at", "2024-05-29 05:23:31.449664"], ["updated_at", "2024-05-29 05:23:31.449664"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 1], ["step", "Add all ingredients except club soda to a cocktail shaker "], ["drink_id", 3], ["created_at", "2024-05-29 05:23:31.449819"], ["updated_at", "2024-05-29 05:23:31.449819"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 2], ["step", "Add ice and short shake for 5 seconds"], ["drink_id", 3], ["created_at", "2024-05-29 05:23:31.450003"], ["updated_at", "2024-05-29 05:23:31.450003"]]
+  [1m[36mInstruction Create (0.0ms)[0m  [1m[32mINSERT INTO "instructions" ("order", "step", "drink_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["order", 3], ["step", "Fine strain into a chilled highball filled with ice and club soda"], ["drink_id", 3], ["created_at", "2024-05-29 05:23:31.450158"], ["updated_at", "2024-05-29 05:23:31.450158"]]
+  [1m[36mInstruction Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "instruction_count" = ? WHERE "drinks"."id" = ?[0m  [["instruction_count", 3], ["id", 3]]
+  [1m[36mIngredient Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+  [1m[36mDrink Update (0.0ms)[0m  [1m[33mUPDATE "drinks" SET "ingredient_count" = ? WHERE "drinks"."id" = ?[0m  [["ingredient_count", 6], ["id", 3]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "clayonstewart"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "email@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "bio", "avatar", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "clayonstewart"], ["password_digest", "[FILTERED]"], ["bio", "Sometext"], ["avatar", "https://cdn.shopify.com/s/files/1/0583/3185/products/Coconut_PassionfruitMojito_5000x.jpg?v=1614055790"], ["email", "email@email.com"], ["created_at", "2024-05-29 05:23:31.455811"], ["updated_at", "2024-05-29 05:23:31.455811"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+[dotenv] Set [36mJWT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2024-05-29 01:26:02 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"clayonstewart", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"clayonstewart", "password"=>"[FILTERED]"}}}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "clayonstewart"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.49ms)
+Completed 202 Accepted in 28ms (Views: 2.4ms | ActiveRecord: 2.2ms | Allocations: 22327)
+Started GET "/api/v1/profile" for 127.0.0.1 at 2024-05-29 01:26:02 -0400
+Processing by Api::V1::UsersController#profile as */*
+  Parameters: {"user"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 336)
+Started GET "/api/v1/profile" for 127.0.0.1 at 2024-05-29 01:26:16 -0400
+Processing by Api::V1::UsersController#profile as */*
+  Parameters: {"user"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 164)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:26:16 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.2ms)
+Completed 200 OK in 36ms (Views: 18.6ms | ActiveRecord: 1.2ms | Allocations: 23207)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:27:01 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.05ms)
+Completed 200 OK in 20ms (Views: 12.6ms | ActiveRecord: 0.7ms | Allocations: 5515)
+Started GET "/api/v1/drinks/toronto" for 127.0.0.1 at 2024-05-29 01:27:05 -0400
+Processing by Api::V1::DrinksController#show as */*
+  Parameters: {"slug"=>"toronto"}
+  [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "toronto"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.2ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.35ms)
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 0.8ms | Allocations: 1697)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:27:07 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.2ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.2ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.98ms)
+Completed 200 OK in 22ms (Views: 14.4ms | ActiveRecord: 1.0ms | Allocations: 5433)
+Started GET "/api/v1/drinks/coconut-passionfruit-mojito" for 127.0.0.1 at 2024-05-29 01:27:10 -0400
+Processing by Api::V1::DrinksController#show as */*
+  Parameters: {"slug"=>"coconut-passionfruit-mojito"}
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "coconut-passionfruit-mojito"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.2ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.63ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 1.2ms | Allocations: 1588)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:27:15 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.93ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.7ms | Allocations: 5431)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:27:40 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.6ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.13ms)
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 1.3ms | Allocations: 5431)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:27:45 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.48ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.5ms | Allocations: 5432)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:30:06 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (1.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.6ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (42.21ms)
+Completed 200 OK in 59ms (Views: 56.1ms | ActiveRecord: 2.1ms | Allocations: 5431)
+Started GET "/api/v1/drinks/toronto" for 127.0.0.1 at 2024-05-29 01:31:00 -0400
+Processing by Api::V1::DrinksController#show as */*
+  Parameters: {"slug"=>"toronto"}
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "toronto"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.3ms)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 1417)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:31:21 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.62ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.4ms | Allocations: 5431)
+Started GET "/api/v1/drinks/coconut-passionfruit-mojito" for 127.0.0.1 at 2024-05-29 01:31:23 -0400
+Processing by Api::V1::DrinksController#show as */*
+  Parameters: {"slug"=>"coconut-passionfruit-mojito"}
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "coconut-passionfruit-mojito"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.2ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.63ms)
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 0.6ms | Allocations: 1575)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:31:27 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.2ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (21.78ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 1.1ms | Allocations: 5431)
+Started GET "/api/v1/drinks/toronto" for 127.0.0.1 at 2024-05-29 01:31:28 -0400
+Processing by Api::V1::DrinksController#show as */*
+  Parameters: {"slug"=>"toronto"}
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "toronto"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.01ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.5ms | Allocations: 1416)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:40:00 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.6ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.07ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 3.1ms | Allocations: 5699)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:40:06 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.85ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.6ms | Allocations: 5431)
+Started GET "/api/v1/drinks/toronto" for 127.0.0.1 at 2024-05-29 01:40:06 -0400
+Processing by Api::V1::DrinksController#show as */*
+  Parameters: {"slug"=>"toronto"}
+  [1m[36mDrink Load (0.6ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "toronto"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.2ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.04ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 1.1ms | Allocations: 1465)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:40:11 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.67ms)
+Completed 200 OK in 22ms (Views: 18.8ms | ActiveRecord: 1.1ms | Allocations: 5431)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:40:21 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (1.6ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.98ms)
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 2.4ms | Allocations: 5431)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:40:24 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.4ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.7ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.87ms)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 1.9ms | Allocations: 5431)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:41:45 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.9ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.55ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 1.4ms | Allocations: 5431)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:41:48 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.24ms)
+Completed 200 OK in 26ms (Views: 15.6ms | ActiveRecord: 0.6ms | Allocations: 5431)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:51:19 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (1.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.28ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 1.7ms | Allocations: 5658)
+Started GET "/api/v1/drinks/toronto" for 127.0.0.1 at 2024-05-29 01:51:20 -0400
+Processing by Api::V1::DrinksController#show as */*
+  Parameters: {"slug"=>"toronto"}
+  [1m[36mDrink Load (1.0ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "toronto"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.2ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.08ms)
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 1.4ms | Allocations: 1465)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:51:27 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.8ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.89ms)
+Completed 200 OK in 35ms (Views: 31.0ms | ActiveRecord: 1.3ms | Allocations: 5431)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:51:29 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.03ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.7ms | Allocations: 5431)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:51:32 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.6ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.2ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.93ms)
+Completed 200 OK in 36ms (Views: 32.3ms | ActiveRecord: 1.4ms | Allocations: 5431)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:51:40 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.2ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.96ms)
+Completed 200 OK in 42ms (Views: 38.3ms | ActiveRecord: 1.5ms | Allocations: 5431)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:51:43 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.2ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.4ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (25.47ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 1.4ms | Allocations: 5431)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:51:44 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.2ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.34ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 1.4ms | Allocations: 5431)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:51:46 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.95ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.9ms | Allocations: 5431)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:52:40 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.01ms)
+Completed 200 OK in 25ms (Views: 19.9ms | ActiveRecord: 1.1ms | Allocations: 5431)
+Started POST "/api/v1/login" for 127.0.0.1 at 2024-05-29 01:53:31 -0400
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"clayonstewart", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"clayonstewart", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "clayonstewart"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.9ms)
+Completed 202 Accepted in 36ms (Views: 15.5ms | ActiveRecord: 2.5ms | Allocations: 1019)
+Started GET "/api/v1/profile" for 127.0.0.1 at 2024-05-29 01:53:31 -0400
+Processing by Api::V1::UsersController#profile as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.31ms)
+Completed 202 Accepted in 11ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 831)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:53:46 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (20.58ms)
+Completed 200 OK in 29ms (Views: 24.7ms | ActiveRecord: 0.7ms | Allocations: 5431)
+Started GET "/api/v1/profile" for 127.0.0.1 at 2024-05-29 01:53:46 -0400
+Processing by Api::V1::UsersController#profile as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.3ms)
+Completed 202 Accepted in 5ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 804)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:53:56 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.2ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.2ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (27.6ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 1.5ms | Allocations: 5431)
+Started GET "/api/v1/profile" for 127.0.0.1 at 2024-05-29 01:53:56 -0400
+Processing by Api::V1::UsersController#profile as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 202 Accepted in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 804)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 01:53:58 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.47ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.8ms | Allocations: 5431)
+Started GET "/api/v1/profile" for 127.0.0.1 at 2024-05-29 01:53:59 -0400
+Processing by Api::V1::UsersController#profile as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.67ms)
+Completed 202 Accepted in 4ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 804)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 02:05:34 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (1.3ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (20.35ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 4.0ms | Allocations: 5657)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 02:05:40 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (114.51ms)
+Completed 200 OK in 116ms (Views: 115.3ms | ActiveRecord: 0.7ms | Allocations: 5435)
+Started GET "/api/v1/drinks/coconut-passionfruit-mojito" for 127.0.0.1 at 2024-05-29 02:05:41 -0400
+Processing by Api::V1::DrinksController#show as */*
+  Parameters: {"slug"=>"coconut-passionfruit-mojito"}
+  [1m[36mDrink Load (0.6ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "coconut-passionfruit-mojito"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.2ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.43ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.9ms | Allocations: 1622)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 02:05:48 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (5.0ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.4ms)
+Completed 200 OK in 28ms (Views: 21.5ms | ActiveRecord: 5.9ms | Allocations: 5431)
+Started GET "/api/v1/drinks/toronto" for 127.0.0.1 at 2024-05-29 02:05:48 -0400
+Processing by Api::V1::DrinksController#show as */*
+  Parameters: {"slug"=>"toronto"}
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "toronto"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.17ms)
+Completed 200 OK in 9ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 1416)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 02:05:49 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.0ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.3ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.82ms)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.5ms | Allocations: 5431)
+Started GET "/api/v1/drinks/1934-cosmo" for 127.0.0.1 at 2024-05-29 02:05:50 -0400
+Processing by Api::V1::DrinksController#show as */*
+  Parameters: {"slug"=>"1934-cosmo"}
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "1934-cosmo"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.0ms)
+Completed 200 OK in 10ms (Views: 3.1ms | ActiveRecord: 0.6ms | Allocations: 1413)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 02:05:51 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.3ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.62ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 1.2ms | Allocations: 5431)
+Started GET "/api/v1/drinks/coconut-passionfruit-mojito" for 127.0.0.1 at 2024-05-29 02:05:52 -0400
+Processing by Api::V1::DrinksController#show as */*
+  Parameters: {"slug"=>"coconut-passionfruit-mojito"}
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."slug" = ? LIMIT ?[0m  [["slug", "coconut-passionfruit-mojito"], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.99ms)
+Completed 200 OK in 9ms (Views: 3.3ms | ActiveRecord: 0.7ms | Allocations: 1573)
+Started GET "/api/v1/drinks" for 127.0.0.1 at 2024-05-29 02:05:54 -0400
+Processing by Api::V1::DrinksController#index as */*
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 1]]
+[active_model_serializers]   [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 2]]
+[active_model_serializers]   [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers]   [1m[36mInstruction Load (0.1ms)[0m  [1m[34mSELECT "instructions".* FROM "instructions" WHERE "instructions"."drink_id" = ?[0m  [["drink_id", 3]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (25.27ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 1.0ms | Allocations: 5432)

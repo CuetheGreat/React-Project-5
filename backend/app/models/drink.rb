@@ -1,25 +1,33 @@
 class Drink < ApplicationRecord
-  has_many :ingredients
-  has_many :instructions
+  has_many :ingredients, dependent: :destroy
+  has_many :instructions, dependent: :destroy
 
   accepts_nested_attributes_for :instructions, :ingredients
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :description, :glass, :garnish, :image, presence: true
 
-  before_create :set_instruction_count, :set_ingredient_count, :generate_slug
+  before_create :generate_slug
+  after_save :update_instruction_count, :update_ingredient_count
 
   private
 
-  def set_instruction_count
-    self.instruction_count = instructions.length
+  def update_instruction_count
+    update_column(:instruction_count, instructions.size)
   end
 
-  def set_ingredient_count
-    self.ingredient_count = ingredients.length
+  def update_ingredient_count
+    update_column(:ingredient_count, ingredients.size)
   end
 
   def generate_slug
-    self.slug = name.gsub(/['`]/, '').parameterize
+    base_slug = name.to_s.gsub(/['`]/, '').parameterize
+    slug_candidate = base_slug
+    count = 2
+    while Drink.exists?(slug: slug_candidate)
+      slug_candidate = "#{base_slug}-#{count}"
+      count += 1
+    end
+    self.slug = slug_candidate
   end
 end
