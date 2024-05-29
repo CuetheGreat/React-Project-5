@@ -1,51 +1,27 @@
-.Navbar-Items {
-  background-color: #333;
-  padding: 10px 20px;
-}
-
-.navbar-logo {
+.navbar {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #343a40;
 }
 
-.nav-brand {
+.navbar-brand a {
   color: white;
+  font-size: 1.5em;
   text-decoration: none;
-  margin-left: 10px;
 }
 
-.nav-menu {
+.navbar-nav {
   list-style: none;
   display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
+  gap: 15px;
 }
 
-.nav-menu li {
-  margin: 0 10px;
-}
-
-.nav-menu .default,
-.nav-menu .active {
+.navbar-nav li a {
   color: white;
   text-decoration: none;
 }
 
-.cta-div {
-  display: flex;
-  align-items: center;
-}
-
-.nav-link,
-.nav-cta-link,
-.cta-link {
-  color: white;
-  text-decoration: none;
-  margin-left: 10px;
-}
-
-.nav-right {
-  margin-left: auto;
+.navbar-nav li a:hover {
+  text-decoration: underline;
 }
