@@ -1,66 +1,28 @@
 .drink-card {
-display: flex;
-  width: 300px;
-  overflow: hidden;
-  box-shadow: 0px 0px 15px -5px;
-  transition: 0.5s;
-  animation: ease-in-out;
-  height: 7.5vh;
-  margin: 0px;
-  border-radius: 15px;
+  background-color: white;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .drink-card:hover {
   transform: scale(1.05);
-  box-shadow: 0px 0px 15px 0px;
 }
 
-.card-image{
-  height: 100%;
-  width: 40%;
+.drink-image {
+  display: block;
+  height: auto;
+  width: 100%;
+  max-width: 150px;
+  margin: auto;
+  border-radius: 8px;
 }
 
-.card-content {
-  justify-content: center;
-  justify-items: center;
-  text-align: center;
-  align-items: center;
-  align-content: center;
-  margin: 0;
-  margin-top:0;
-}
-
-.card-title{
-  margin-bottom: 0;
-}
-
-h3,
-p {
-  margin: 0;
-  padding: 0;
-}
-
-.btn{
-  display: flex;
-  justify-content: center ;
-}
-
-.btn button{
-  padding: 0.5rem;
-  background-color: white;
-  border: none;
-  transition: 0.2s;
-  margin-bottom:0.5rem;
-  border-radius: 5px;
-}
-
-.btn button:hover{
-  background: rgba(73, 63, 200, 0.1);
-}
-
-a{
-text-transform: uppercase;
-color: rgb(73, 63, 200);
-text-decoration: none;
-font-weight: bold;
+.drink-name {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #333;
 }

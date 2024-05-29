@@ -1,0 +1,39 @@
+.about-container {
+  color: white;
+  padding: 20px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-text {
+  margin: auto;
+}
+
+.about-title {
+  text-align: center;
+}
+
+.about-description {
+  background-color: #cc3500;
+  border-radius: 12px;
+  height: fit-content;
+  padding: 20px;
+  margin: auto;
+}
+
+.about-image {
+  text-align: center;
+}
+
+.about-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

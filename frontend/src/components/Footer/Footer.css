@@ -1,10 +1,31 @@
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: fit-content;
-  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(97, 96, 115));
+.footer {
+  background-color: #333;
   color: white;
+  padding: 20px 0;
   text-align: center;
+}
+
+.footer h2 {
+  margin-bottom: 15px;
+}
+
+.footer a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
 }

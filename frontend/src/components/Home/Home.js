@@ -1,7 +1,7 @@
-import React from 'react'
-import { Container, Image } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import './Home.css'
+import React from 'react';
+import { Container, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import './Home.css';
 
 const Home = () => {
   return (
@@ -9,10 +9,8 @@ const Home = () => {
       <div className='home-splash'>
         <div className='title-div'>
           <span className='subtitle'>Your personalized bartender</span>
-          <div className='title'>
-            One Stop For All Of Your Favorite Drink Recipes.
-          </div>
-          <Link className='cta-btn' to='#'>
+          <div className='title'>One Stop For All Of Your Favorite Drink Recipes.</div>
+          <Link className='cta-btn' to='/drinks'>
             View Drinks
           </Link>
         </div>
@@ -21,7 +19,7 @@ const Home = () => {
         </div>
       </div>
     </Container>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

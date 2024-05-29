@@ -1,20 +1,15 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import './Card.css'
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import './Card.css';
 
 export const DrinkCard = ({ drink }) => {
   return (
-    <Container style={{backgroundColor:'white', margin: 'auto'}}>
+    <Container className='drink-card'>
       <Link to={`/drinks/${drink.slug}`}>
-        <img
-          src={drink.image}
-          alt={drink.name}
-          style={{ display: 'block', height: 'auto%', width: '25%' }}
-        />
+        <img src={drink.image} alt={drink.name} className='drink-image' />
       </Link>
-
-      <h6>{drink.name}</h6>
+      <h6 className='drink-name'>{drink.name}</h6>
     </Container>
-  )
-}
+  );
+};

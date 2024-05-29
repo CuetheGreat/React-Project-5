@@ -1,7 +1,7 @@
-import React from 'react'
-import { Col, Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import './Footer.css'
+import React from 'react';
+import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import './Footer.css';
 
 const Footer = () => {
   return (
@@ -21,15 +21,13 @@ const Footer = () => {
             <li>
               <Link to='#'>New Drink</Link>
             </li>
-
             <li>
-              <Link to='#'>Profile</Link>
-            </li>
-          </ul>
+              <Link to='#'>Profile</li>
+            </ul>
         </Col>
       </Row>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

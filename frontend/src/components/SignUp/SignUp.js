@@ -1,68 +1,53 @@
-import React, { useEffect } from 'react'
-import { Container, Form } from 'react-bootstrap'
-import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router'
+import React, { useEffect } from 'react';
+import { Container, Form } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
 
-const SignUpForm = props => {
-  let navigate = useNavigate()
-  const { user } = useSelector(state => state.user)
+const SignUpForm = (props) => {
+  let navigate = useNavigate();
+  const { user } = useSelector((state) => state.user);
 
-  const handleSubmitRedirect = e => {
-    e.preventDefault()
-  }
+  const handleSubmitRedirect = (e) => {
+    e.preventDefault();
+    props.handleSubmit(); // Assuming handleSubmit is passed as a prop to handle the form submission
+  };
 
   useEffect(() => {
-    if (!!user) {
-      navigate('/profile')
+    if (user) {
+      navigate('/profile');
     }
-  }, [navigate,user])
+  }, [navigate, user]);
 
   return (
-    <Container className='form_container' style ={{textAlign:'center'}}>
-      <Form onSubmit={e => handleSubmitRedirect(e)}>
-        {/* Name Group */}
+    <Container className='form_container' style={{ textAlign: 'center' }}>
+      <Form onSubmit={handleSubmitRedirect}>
         <Form.Group>
           <Form.Label htmlFor='username'>Username:</Form.Label>
-          <Form.Control
-            type={'text'}
-            name='username'
-            value={props.username}
-            onChange={props.handleChange}
-          />
+          <Form.Control type='text' name='username' value={props.username} onChange={props.handleChange} />
         </Form.Group>
         <Form.Group>
-          <Form.Label htmlFor='username'>Password:</Form.Label>
+          <Form.Label htmlFor='password'>Password:</Form.Label>
           <Form.Control
-            type={'password'}
+            type='password'
             name='password'
             value={props.password}
             onChange={props.handleChange}
           />
         </Form.Group>
         <Form.Group>
-          <Form.Label htmlFor='username'>Password:</Form.Label>
-          <Form.Control
-            type={'text'}
-            name='bio'
-            value={props.password}
-            onChange={props.handleChange}
-          />
+          <Form.Label htmlFor='bio'>Bio:</Form.Label>
+          <Form.Control type='text' name='bio' value={props.bio} onChange={props.handleChange} />
         </Form.Group>
         <Form.Group>
-          <Form.Label htmlFor='username'>Password:</Form.Label>
-          <Form.Control
-            type={'password'}
-            name='avatar'
-            value={props.password}
-            onChange={props.handleChange}
-          />
+          <Form.Label htmlFor='avatar'>Avatar URL:</Form.Label>
+          <Form.Control type='text' name='avatar' value={props.avatar} onChange={props.handleChange} />
         </Form.Group>
         <Form.Group>
-          <input type={'submit'} />
+          <input type='submit' value='Sign Up' />
         </Form.Group>
       </Form>
     </Container>
-  )
-}
+  );
+};
 
-export default SignUpForm
+export default SignUpForm;
